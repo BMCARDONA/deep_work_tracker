@@ -7,7 +7,7 @@
     - Writing: 3
     - Reading: 4
 
-![Pie Chart](path/to/pie_chart.png)
+![Pie Chart](pie_chart.png)
 
 ---
 
