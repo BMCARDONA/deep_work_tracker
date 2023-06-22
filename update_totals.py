@@ -25,9 +25,6 @@ def update_totals(file_path):
     for category, hours in category_hours.items():
         content = re.sub(r'(' + category + ':\s)\d+', r'\g<1>' + str(hours), content)
     
-    # Remove the date line from the content
-    content = re.sub(r'#### Date:.*', '', content)
-    
     # Write the updated content to the file
     with open(file_path, 'w') as f:
         f.write(content)
