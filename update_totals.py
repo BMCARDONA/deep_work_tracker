@@ -13,15 +13,17 @@ def update_totals(file_path):
     category_hours = {category: 0 for category in categories}
     
     # Find all the deep work hours
-    deep_work_hours = re.findall(r'-\sHour\s\d:\s(.+)', content)
+    deep_work_hours = re.findall(r'#### Date:\s(.+?)\n#### Deep Work Hours:\s(\d+)\n#### Categories:\s*{(.+?)}', content)
     
     # Update the totals
-    for hour in deep_work_hours:
-        total_hours += 1
-        category_hours[hour] += 1
+    for date, hours, categories_str in deep_work_hours:
+        total_hours += int(hours)
+        categories_dict = dict([item.split(': ') for item in categories_str.split(', ')])
+        for category, hours in categories_dict.items():
+            category_hours[category] += int(hours)
     
     # Update the content
-    content = re.sub(r'(Total Deep Work Hours \(Total\):\s)\d+', r'\g<1>' + str(total_hours), content)
+    content = re.sub(r'(Total Deep Work Hours:\s)\d+', r'\g<1>' + str(total_hours), content)
     for category, hours in category_hours.items():
         content = re.sub(r'(' + category + ':\s)\d+', r'\g<1>' + str(hours), content)
     
