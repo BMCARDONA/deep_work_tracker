@@ -1,0 +1,1 @@
+To use this script, you need to have matplotlib installed. You can install it by running the command pip install matplotlib in your command prompt or terminal
