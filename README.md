@@ -48,11 +48,11 @@ python update_table.py
 
 For this example, pie_chart.png will look like this:
 
-![Sample Pie Chart](pie_chart.png)
+![Sample Pie Chart](deep_work_log_june_2023/pie_chart.png)
 
 And stacked_bar_graph.png will look like this:
 
-![Sample Stacked Bar Graph](stacked_bar_graph.png)
+![Sample Stacked Bar Graph](deep_work_log_june_2023/stacked_bar_graph.png)
 
 ## Contributing
 
