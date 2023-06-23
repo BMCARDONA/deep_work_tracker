@@ -2,6 +2,22 @@
 
 Deep work is defined by Cal Newport as a state of peak concentration that lets one learn hard things and create quality work quickly. The goal of this repository is to allow one to log the accomplishments one has made by incorporating the deep work philosophy. To create charts, one need only update a CSV file and run a Python script.
 
+## Installation
+
+You can install this project by cloning the repository, forking the repository, or downloading the zip files.
+
+To **clone** the repository, open a terminal and run the following command:
+
+```sh
+git clone https://github.com/your-username/deep-work-log.git
+```
+
+Make sure to replace `your-username` with your GitHub username.
+
+To **fork** the repository, click on the `Fork` button in the top-right corner of this page. This will create a copy of the repository in your GitHub account.
+
+To **download** the zip files, click on the `Code` button in the top-right corner of this page and then click on `Download ZIP`. Extract the zip files to a directory of your choice
+
 ## Dependencies
 
 - pandas
