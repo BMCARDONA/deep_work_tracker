@@ -22,7 +22,7 @@ def generate_charts(file_path):
     plt.title('Deep Work Monthly Breakdown')
 
     # Save the pie chart as an image
-    plt.savefig('pie_chart.png')
+    plt.savefig('figures/pie_chart.png')
 
     # Generate the stacked bar graph
     data = {'Date': df['Date']}
@@ -43,7 +43,7 @@ def generate_charts(file_path):
     ax.set_ylabel('Deep Work Hours')
 
     # Save the stacked bar graph as an image
-    plt.savefig('stacked_bar_graph.png')
+    plt.savefig('figures/stacked_bar_graph.png')
 
     # Sum the "Deep Work Hours" column and make that the value of "Total Deep Work Hours"
     total_deep_work_hours = df['Deep Work Hours'].sum()
