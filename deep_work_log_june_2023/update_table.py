@@ -56,18 +56,19 @@ def generate_charts(file_path):
 
     # Save the updated totals
     with open('updated_totals.md', 'w') as f:
-        f.write(f'Total Deep Work Hours: {total_deep_work_hours}\n')
-        f.write(f'Total Deep Work Hours (by Category):\n')
+        f.write(f'## Total Deep Work Hours: {total_deep_work_hours} \n')
+        
+        f.write(f'## Total Deep Work Hours (by Category):\n')
         for col, total in category_totals:
             f.write(f'  - {col}: {total}\n')
     
         # Add the pie chart to the markdown file
-        f.write('Deep Work Monthly Breakdown \n')
-        f.write('\n![Pie Chart](pie_chart.png)\n')
+        f.write('\n ### Deep Work Monthly Breakdown: \n')
+        f.write('![Pie Chart](pie_chart.png) \n')
 
         # Add the stacked bar graph to the markdown file
-        f.write('Deep Work Daily Breakdown \n')
-        f.write('![Stacked Bar Graph](stacked_bar_graph.png)\n')
+        f.write('\n ### Deep Work Daily Breakdown: \n')
+        f.write('![Stacked Bar Graph](stacked_bar_graph.png) \n')
 
 
 
