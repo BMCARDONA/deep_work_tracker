@@ -31,7 +31,7 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 pip install pandas matplotlib
 ```
 
-2. Add rows to the `table.csv` file located in the `deep_work_log_MONTH_YEAR` directory with the following format:
+2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory with the following format:
 
 ```
 Date,Deep Work Hours,Reading,Writing,Coding,Mathematics
@@ -45,7 +45,7 @@ Date,Deep Work Hours,Reading,Writing,Coding,Mathematics
 2023-06-21,7,0,3,0,4
 ```
 
-For the `deep_work_log_MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like! 
+For the `MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like! 
 
 Notes about the `table.csv` file:
 - Only category columns (in this case, "Reading", "Writing", "Coding", and "Mathematics") should be deleted. You can add as many category columns, as needed. 
@@ -76,11 +76,11 @@ Total Deep Work Hours (by Category):
 
 Additionally, `monthly_summary.md` will contain `pie_chart.png`, which will look like this:
 
-![Sample Pie Chart](deep_work_log_june_2023/figures/pie_chart.png)
+![Sample Pie Chart](june_2023/figures/pie_chart.png)
 
 And `stacked_bar_graph.png`, which will look like this:
 
-![Sample Stacked Bar Graph](deep_work_log_june_2023/figures/stacked_bar_graph.png)
+![Sample Stacked Bar Graph](june_2023/figures/stacked_bar_graph.png)
 
 ## Contributing
 
