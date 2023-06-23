@@ -6,7 +6,7 @@ Total Deep Work Hours (by Category):
   - Mathematics: 23
 
  ### Deep Work Monthly Breakdown: 
-![Pie Chart](pie_chart.png) 
+![Pie Chart](figures/pie_chart.png) 
 
  ### Deep Work Daily Breakdown: 
-![Stacked Bar Graph](stacked_bar_graph.png) 
+![Stacked Bar Graph](figures/stacked_bar_graph.png) 
