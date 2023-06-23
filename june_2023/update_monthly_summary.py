@@ -39,9 +39,6 @@ def generate_charts(file_path):
     fig, ax = plt.subplots(figsize=(10, 10))
     plot_data.plot(x='Date', kind='bar', stacked=True, ax=ax)
 
-    # # Add a grid to the stacked bar graph
-    # ax.grid(True)
-
     # Add the title to the stacked bar graph
     ax.set_title('Deep Work Daily Breakdown')
 
