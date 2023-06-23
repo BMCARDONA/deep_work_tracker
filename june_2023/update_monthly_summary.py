@@ -1,7 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 def generate_charts(file_path):
+    # Set the color palette
+    sns.set_palette('pastel')
+
     # Read the CSV file into a pandas DataFrame
     df = pd.read_csv(file_path)
 
@@ -22,7 +26,7 @@ def generate_charts(file_path):
     plt.title('Deep Work Monthly Breakdown')
 
     # Save the pie chart as an image
-    plt.savefig('figures/pie_chart.png')
+    plt.savefig('figures/pie_chart.png', dpi=400)
 
     # Generate the stacked bar graph
     data = {'Date': df['Date']}
@@ -35,6 +39,9 @@ def generate_charts(file_path):
     fig, ax = plt.subplots(figsize=(10, 10))
     plot_data.plot(x='Date', kind='bar', stacked=True, ax=ax)
 
+    # # Add a grid to the stacked bar graph
+    # ax.grid(True)
+
     # Add the title to the stacked bar graph
     ax.set_title('Deep Work Daily Breakdown')
 
@@ -43,7 +50,7 @@ def generate_charts(file_path):
     ax.set_ylabel('Deep Work Hours')
 
     # Save the stacked bar graph as an image
-    plt.savefig('figures/stacked_bar_graph.png')
+    plt.savefig('figures/stacked_bar_graph.png', dpi=400)
 
     # Sum the "Deep Work Hours" column and make that the value of "Total Deep Work Hours"
     total_deep_work_hours = df['Deep Work Hours'].sum()
@@ -69,9 +76,6 @@ def generate_charts(file_path):
         # Add the stacked bar graph to the markdown file
         f.write('\n ### Deep Work Daily Breakdown: \n')
         f.write('![Stacked Bar Graph](figures/stacked_bar_graph.png) \n')
-
-
-
 
 file_path = 'table.csv'
 generate_charts(file_path)
