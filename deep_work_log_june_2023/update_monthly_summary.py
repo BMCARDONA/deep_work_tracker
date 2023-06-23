@@ -64,11 +64,11 @@ def generate_charts(file_path):
     
         # Add the pie chart to the markdown file
         f.write('\n ### Deep Work Monthly Breakdown: \n')
-        f.write('![Pie Chart](pie_chart.png) \n')
+        f.write('![Pie Chart](figures/pie_chart.png) \n')
 
         # Add the stacked bar graph to the markdown file
         f.write('\n ### Deep Work Daily Breakdown: \n')
-        f.write('![Stacked Bar Graph](stacked_bar_graph.png) \n')
+        f.write('![Stacked Bar Graph](figures/stacked_bar_graph.png) \n')
 
 
 
