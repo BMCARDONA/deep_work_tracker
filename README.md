@@ -25,7 +25,10 @@ Date,Deep Work Hours,Reading,Writing,Coding
 2023-06-17,8,2,3,3
 ```
 
-Note that the column names "Date" and "Deep Work Hours" should not be edited. The dates should be in the format the format `YYYY-MM-DD`.
+  Note:
+  - Only the column names of the categories (e.g., "Reading", "Writing", and "Coding") should be edited. 
+  - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
+  - A value in the “Deep Work Hours” column represents the total deep work hours for a given day. Hence, it should be the sum of the category values that come after it. 
 
 3. Run the script:
 
@@ -35,15 +38,15 @@ python update_table.py
 
 4. The following files will be generated:
 
+- updated_totals.md
 - pie_chart.png
 - stacked_bar_graph.png
-- updated_totals.md
 
-For this example, the pie chart will look like this:
+For this example, pie_chart.png will look like this:
 
 ![Sample Pie Chart](pie_chart.png)
 
-And the stacked bar graph will look like this:
+And stacked_bar_graph.png will look like this:
 
 ![Sample Stacked Bar Graph](stacked_bar_graph.png)
 
