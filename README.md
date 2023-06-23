@@ -25,7 +25,7 @@ Date,Deep Work Hours,Reading,Writing,Coding
 2023-06-17,8,2,3,3
 ```
 
-  Note:
+  Notes about the .csv file:
   - Only the column names of the categories (e.g., "Reading", "Writing", and "Coding") should be edited. 
   - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
   - A value in the “Deep Work Hours” column represents the total deep work hours for a given day. Hence, it should be the sum of the category values that come after it. 
