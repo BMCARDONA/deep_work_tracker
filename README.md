@@ -54,12 +54,12 @@ Notes about the `table.csv` file:
 3. Run the script:
 
 ```
-python update_table.py
+python update_summary.py
 ```
 
 4. The following files will be generated:
 
-- updated_totals.md
+- summary.md
 - pie_chart.png
 - stacked_bar_graph.png
 
