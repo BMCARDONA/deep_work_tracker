@@ -74,7 +74,7 @@ Total Deep Work Hours (by Category):
   - Mathematics: 23
 ```
 
-Additionally, it will generate `pie_chart.png`, which will look like this:
+Additionally, `monthly_summary.md` will contain `pie_chart.png`, which will look like this:
 
 ![Sample Pie Chart](deep_work_log_june_2023/pie_chart.png)
 
