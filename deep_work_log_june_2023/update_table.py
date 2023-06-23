@@ -55,9 +55,9 @@ def generate_charts(file_path):
             category_totals.append((col, df[col].sum()))
 
     # Save the updated totals
-    with open('updated_totals.md', 'w') as f:
+    with open('monthly_summary.md', 'w') as f:
         f.write(f'## Total Deep Work Hours: {total_deep_work_hours} \n')
-        
+
         f.write(f'## Total Deep Work Hours (by Category):\n')
         for col, total in category_totals:
             f.write(f'  - {col}: {total}\n')
