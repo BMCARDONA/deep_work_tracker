@@ -31,8 +31,7 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 ```
 pip install pandas 
 pip install matplotlib
-pip install seaborn (optional)
-
+pip install seaborn
 ```
 
 2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory with the following format:
