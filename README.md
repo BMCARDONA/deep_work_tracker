@@ -65,8 +65,8 @@ python update_monthly_summary.py
 
 For this example, `monthly_summary.md` will generate the following information:
 
-## Total Deep Work Hours: 66
-## Total Deep Work Hours (by Category):
+Total Deep Work Hours: 66
+Total Deep Work Hours (by Category):
   - Reading: 12
   - Writing: 18
   - Coding: 13
