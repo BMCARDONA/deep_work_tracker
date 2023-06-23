@@ -1,6 +1,6 @@
 # Deep Work Log
 
-Deep work is defined by Cal Newport as a state of peak concentration that lets one learn hard things and create quality work quickly. The goal of this repository is to allow one to log the accomplishments one has made by incorporating the deep work philosophy. To create charts, one need only update a CSV file and run a Python script.
+Deep work is defined by Cal Newport as a state of peak concentration that lets one learn hard things and create quality work quickly. The goal of this repository is to allow one to log the accomplishments one has made by incorporating the deep work philosophy. To create a monthly log, one need only update a CSV file and run a Python script.
 
 ## Installation
 
