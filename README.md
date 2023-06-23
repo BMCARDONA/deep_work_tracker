@@ -22,13 +22,17 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 
 - pandas
 - matplotlib
+- seaborn (optional)
 
 ## Usage
 
 1. Install the dependencies using pip:
 
 ```
-pip install pandas matplotlib
+pip install pandas 
+pip install matplotlib
+pip install seaborn (optional)
+
 ```
 
 2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory with the following format:
