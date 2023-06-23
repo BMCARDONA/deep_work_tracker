@@ -20,7 +20,7 @@ pip install pandas matplotlib
 ```
 Date,Deep Work Hours,Reading,Writing,Coding
 2023-06-12,8,3,2,3
-2023-06-13,1,1,2,1
+2023-06-13,4,1,2,1
 2023-06-14,8,2,3,3
 2023-06-17,8,2,3,3
 ```
