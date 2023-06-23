@@ -9,7 +9,7 @@ You can install this project by cloning the repository, forking the repository, 
 To **clone** the repository, open a terminal and run the following command:
 
 ```sh
-git clone https://github.com/your-username/deep-work-log.git
+git clone git@github.com:your-username/deep_work_log.git
 ```
 
 Make sure to replace `your-username` with your GitHub username.
