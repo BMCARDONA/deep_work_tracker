@@ -18,6 +18,9 @@ def generate_charts(file_path):
     ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
     ax1.axis('equal')
 
+    # Add the title to the pie chart
+    plt.title('Deep Work Monthly Breakdown')
+    
     # Save the pie chart as an image
     plt.savefig('pie_chart.png')
 
