@@ -4,7 +4,7 @@ import seaborn as sns
 
 def generate_charts(file_path):
     # Set the color palette
-    sns.set_palette('pastel')
+    sns.set_palette('colorblind')
 
     # Read the CSV file into a pandas DataFrame
     df = pd.read_csv(file_path)

@@ -22,7 +22,7 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 
 - pandas
 - matplotlib
-- seaborn (optional)
+- seaborn 
 
 ## Usage
 
@@ -37,15 +37,14 @@ pip install seaborn
 2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory with the following format:
 
 ```
-Date,Deep Work Hours,Reading,Writing,Coding,Mathematics
-2023-06-12,10,1,2,3,4
-2023-06-13,8,1,1,2,4
-2023-06-14,8,2,3,1,2
-2023-06-17,8,2,3,2,1
-2023-06-18,10,3,2,1,4
-2023-06-19,8,2,1,1,4
-2023-06-20,7,1,3,3,0
-2023-06-21,7,0,3,0,4
+Date,Deep Work Hours,Reading,Writing,Coding,Mathematics,Projects
+2023-06-01,6,1,0,2,1,2
+2023-06-02,6,0,1,2,1,2
+2023-06-03,5,0,0,2,1,2
+2023-06-04,6,1,3,0,0,2
+2023-06-05,5,1,0,2,1,2
+2023-06-06,4,1,0,0,1,2
+...
 ```
 
 For the `MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like! 

@@ -1,9 +1,10 @@
-Total Deep Work Hours: 66 
+Total Deep Work Hours: 153 
 Total Deep Work Hours (by Category):
-  - Reading: 12
-  - Writing: 18
-  - Coding: 13
-  - Mathematics: 23
+  - Reading: 24
+  - Writing: 11
+  - Coding: 48
+  - Mathematics: 27
+  - Projects: 43
 
  ### Deep Work Monthly Breakdown: 
 ![Pie Chart](figures/pie_chart.png) 
