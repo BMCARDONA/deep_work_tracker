@@ -63,7 +63,7 @@ python update_monthly_summary.py
 - `figures/pie_chart.png`
 - `figures/stacked_bar_graph.png`
 
-For this example, `monthly_summary.md` will generate the following information:
+For the `june_2023` example, `monthly_summary.md` will generate the following information:
 
 ```
 Total Deep Work Hours: 66
