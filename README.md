@@ -18,15 +18,19 @@ pip install pandas matplotlib
 2. Add rows to the `table.csv` file with the following format:
 
 ```
-Date,Deep Work Hours,Reading,Writing,Coding
-2023-06-12,8,3,2,3
-2023-06-13,4,1,2,1
-2023-06-14,8,2,3,3
-2023-06-17,8,2,3,3
+Date,Deep Work Hours,Reading,Writing,Coding,Mathematics
+2023-06-12,8,3,2,3,4
+2023-06-13,1,1,2,1,4
+2023-06-14,8,2,3,3,4
+2023-06-17,8,2,3,3,4
+2023-06-18,8,3,2,3,4
+2023-06-19,1,1,2,1,4
+2023-06-20,8,2,3,3,4
+2023-06-21,8,2,3,3,4
 ```
 
   Notes about the .csv file:
-  - Only the column names of the categories (e.g., "Reading", "Writing", and "Coding") should be edited. 
+  - Only column names of the categories (e.g., "Reading", "Writing", "Coding", and "Mathematics") should be added/deleted. 
   - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
   - A value in the “Deep Work Hours” column represents the total deep work hours for a given day. Hence, it should be the sum of the category values that come after it. 
 
