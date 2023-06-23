@@ -59,15 +59,25 @@ python update_monthly_summary.py
 
 4. The following files will be generated:
 
-- monthly_summary.md
-- pie_chart.png
-- stacked_bar_graph.png
+- `monthly_summary.md`
+- `pie_chart.png`
+- `stacked_bar_graph.png`
 
-For this example, pie_chart.png will look like this:
+For this example, `monthly_summary.md` will generate the following information:
+
+## Total Deep Work Hours: 66
+## Total Deep Work Hours (by Category):
+  - Reading: 12
+  - Writing: 18
+  - Coding: 13
+  - Mathematics: 23
+
+
+Additionally, it will generate `pie_chart.png`, which will look like this:
 
 ![Sample Pie Chart](deep_work_log_june_2023/pie_chart.png)
 
-And stacked_bar_graph.png will look like this:
+And `stacked_bar_graph.png`, which will look like this:
 
 ![Sample Stacked Bar Graph](deep_work_log_june_2023/stacked_bar_graph.png)
 
