@@ -54,7 +54,7 @@ Notes about the `table.csv` file:
 3. Run the script:
 
 ```
-python update_summary.py
+python update_monthly_summary.py
 ```
 
 4. The following files will be generated:
