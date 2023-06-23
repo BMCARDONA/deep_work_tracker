@@ -60,6 +60,17 @@ def generate_charts(file_path):
         f.write(f'Total Deep Work Hours (by Category):\n')
         for col, total in category_totals:
             f.write(f'  - {col}: {total}\n')
+    
+        # Add the pie chart to the markdown file
+        f.write('Deep Work Monthly Breakdown \n')
+        f.write('\n![Pie Chart](pie_chart.png)\n')
+
+        # Add the stacked bar graph to the markdown file
+        f.write('Deep Work Daily Breakdown \n')
+        f.write('![Stacked Bar Graph](stacked_bar_graph.png)\n')
+
+
+
 
 file_path = 'table.csv'
 generate_charts(file_path)
