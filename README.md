@@ -59,7 +59,7 @@ python update_summary.py
 
 4. The following files will be generated:
 
-- summary.md
+- monthly_summary.md
 - pie_chart.png
 - stacked_bar_graph.png
 
