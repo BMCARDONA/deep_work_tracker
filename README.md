@@ -47,7 +47,7 @@ Date,Deep Work Hours,Reading,Writing,Coding,Mathematics
 
 Notes about the `table.csv` file:
 - Make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours.
-- Only category columns (in this case, "Reading", "Writing", "Coding", and "Mathematics") should be added/deleted. 
+- Only category columns (in this case, "Reading", "Writing", "Coding", and "Mathematics") should be deleted. You can add as many category columns, as needed. 
 - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
 
 3. Run the script:
