@@ -20,7 +20,7 @@ def generate_charts(file_path):
 
     # Add the title to the pie chart
     plt.title('Deep Work Monthly Breakdown')
-    
+
     # Save the pie chart as an image
     plt.savefig('pie_chart.png')
 
@@ -34,6 +34,9 @@ def generate_charts(file_path):
     # Increase the size of the figure
     fig, ax = plt.subplots(figsize=(10, 10))
     plot_data.plot(x='Date', kind='bar', stacked=True, ax=ax)
+
+    # Add the title to the stacked bar graph
+    ax.set_title('Deep Work Daily Breakdown')
 
     # Rotate the dates and label the y-axis
     plt.xticks(rotation=45, ha='right')
