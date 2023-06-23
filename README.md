@@ -45,8 +45,9 @@ Date,Deep Work Hours,Reading,Writing,Coding,Mathematics
 2023-06-21,7,0,3,0,4
 ```
 
+For the `deep_work_log_MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like! 
+
 Notes about the `table.csv` file:
-- Make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours.
 - Only category columns (in this case, "Reading", "Writing", "Coding", and "Mathematics") should be deleted. You can add as many category columns, as needed. 
 - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
 
@@ -72,7 +73,7 @@ And stacked_bar_graph.png will look like this:
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
 
 ## License
 
