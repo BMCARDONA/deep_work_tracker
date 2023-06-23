@@ -1,19 +1,6 @@
-# deep_work_monthly_log
- *Deep work* as defined by Cal Newport is a state of peak concentration that lets one learn hard things and create quality work quickly. The goal of this repository is to allow you to log the accomplishments you've made by incorporating the "deep work" philosophy. 
-
-Sure! Here's an updated version of the README.md file:
-
 # Deep Work Log
 
-Deep work, as defined by Cal Newport, is a state of peak concentration that lets one learn hard things and create quality work quickly. The goal of this repository is to allow one to log the accomplishments one has made by incorporating the deep work philosophy. To create charts, one need only update a CSV file and run a Python script.
-
-The pie chart will look like this:
-
-![Sample Pie Chart](pie_chart.png)
-
-And the stacked bar graph will look like this:
-
-![Sample Stacked Bar Graph](stacked_bar_graph.png)
+Deep work is defined by Cal Newport as a state of peak concentration that lets one learn hard things and create quality work quickly. The goal of this repository is to allow one to log the accomplishments one has made by incorporating the deep work philosophy. To create charts, one need only update a CSV file and run a Python script.
 
 ## Dependencies
 
@@ -51,6 +38,14 @@ python update_table.py
 - pie_chart.png
 - stacked_bar_graph.png
 - updated_totals.md
+
+For this example, the pie chart will look like this:
+
+![Sample Pie Chart](pie_chart.png)
+
+And the stacked bar graph will look like this:
+
+![Sample Stacked Bar Graph](stacked_bar_graph.png)
 
 ## Contributing
 
