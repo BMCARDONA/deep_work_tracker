@@ -9,11 +9,11 @@ Deep work, as defined by Cal Newport, is a state of peak concentration that lets
 
 The pie chart will look like this:
 
-![Sample Pie Chart](URL_OF_PIE_CHART_IMAGE)
+![Sample Pie Chart](pie_chart.png)
 
 And the stacked bar graph will look like this:
 
-![Sample Stacked Bar Graph](URL_OF_STACKED_BAR_GRAPH_IMAGE)
+![Sample Stacked Bar Graph](stacked_bar_graph.png)
 
 ## Dependencies
 
