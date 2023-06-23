@@ -31,7 +31,7 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 pip install pandas matplotlib
 ```
 
-2. Add rows to the `table.csv` file with the following format:
+2. Add rows to the `table.csv` file located in the `deep_work_log_MONTH_YEAR` directory with the following format:
 
 ```
 Date,Deep Work Hours,Reading,Writing,Coding,Mathematics
@@ -45,10 +45,10 @@ Date,Deep Work Hours,Reading,Writing,Coding,Mathematics
 2023-06-21,7,0,3,0,4
 ```
 
-  Notes about the .csv file:
-  - Only column names of the categories (e.g., "Reading", "Writing", "Coding", and "Mathematics") should be added/deleted. 
-  - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
-  - A value in the “Deep Work Hours” column represents the total deep work hours for a given day. Hence, it should be the sum of the category values that come after it. 
+Notes about the `table.csv` file:
+- Make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours.
+- Only category columns (in this case, "Reading", "Writing", "Coding", and "Mathematics") should be added/deleted. 
+- A date in the “Date” column should be in the format `YYYY-MM-DD`. 
 
 3. Run the script:
 
