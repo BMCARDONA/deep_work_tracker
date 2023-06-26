@@ -84,6 +84,10 @@ And `stacked_bar_graph.png`, which will look like this:
 
 ![Sample Stacked Bar Graph](june_2023/figures/stacked_bar_graph.png)
 
+And `heat_map.png`, which will look like this:
+
+![Sample Heat Map](june_2023/figures/heat_map.png)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.

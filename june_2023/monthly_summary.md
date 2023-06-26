@@ -11,3 +11,6 @@ Total Deep Work Hours (by Category):
 
  ### Deep Work Daily Breakdown: 
 ![Stacked Bar Graph](figures/stacked_bar_graph.png) 
+
+ ### Deep Work Heat Map: 
+![Heat Map](figures/heat_map.png) 
