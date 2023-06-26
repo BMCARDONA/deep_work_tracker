@@ -17,9 +17,17 @@ def generate_charts(file_path):
             labels.append(col)
             sizes.append(df[col].sum())
 
+    # Filter out sizes and labels with a zero size
+    nonzero_sizes = [size for size in sizes if size > 0]
+    nonzero_labels = [label for label, size in zip(labels, sizes) if size > 0]
+
+    # Define a custom function to format the percentage labels
+    def format_autopct(pct):
+        return f"{pct:.1f}%" if pct > 0 else ""
+
     # Generate the pie chart
     fig1, ax1 = plt.subplots()
-    ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+    ax1.pie(nonzero_sizes, labels=nonzero_labels, autopct=format_autopct, startangle=90)
     ax1.axis('equal')
 
     # Add the title to the pie chart
@@ -33,10 +41,15 @@ def generate_charts(file_path):
     for col in df.columns:
         if col not in ['Date', 'Deep Work Hours']:
             data[col] = df[col]
+    
     plot_data = pd.DataFrame(data)
+
+    # Filter out columns with all zero values from plot_data
+    plot_data = plot_data.loc[:, (plot_data != 0).any(axis=0)]
 
     # Increase the size of the figure
     fig, ax = plt.subplots(figsize=(10, 10))
+    
     plot_data.plot(x='Date', kind='bar', stacked=True, ax=ax)
 
     # Add the title to the stacked bar graph
