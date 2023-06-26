@@ -67,7 +67,7 @@ def generate_charts(file_path):
     
     fig, ax = plt.subplots(figsize=(10, 10))
     
-    sns.heatmap(heat_map_data.pivot(index='Date', columns='Category', values='Hours'), cmap='YlOrRd', linewidths=0.5, linecolor='lightgrey', ax=ax)
+    sns.heatmap(heat_map_data.pivot(index='Date', columns='Category', values='Hours'), cmap='GnBu', linewidths=0.5, linecolor='lightgrey', ax=ax)
     
     ax.set_title('Deep Work Heat Map')
     
