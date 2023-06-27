@@ -1,6 +1,6 @@
 # Deep Work Log
 
-Deep work is a state of peak concentration that lets one learn hard things and create quality work quickly. The goal of this repository is to allow one to log the accomplishments one has made by incorporating the deep work philosophy. To create a daily entry to a monthly log, one need only update a CSV file and run a Python script.
+Deep work is a state of peak concentration that lets one learn hard things and create quality work quickly. The goal of this repository is to allow you to log the accomplishments you've made by incorporating the deep work philosophy. To create a daily entry to a monthly log, you need only update a CSV file and run a Python script.
 
 ## Installation
 
@@ -29,12 +29,10 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 1. Install the dependencies using pip:
 
 ```
-pip install pandas 
-pip install matplotlib
-pip install seaborn
+pip install pandas matplotlib seaborn
 ```
 
-2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory with the following format:
+2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory in the following format:
 
 ```
 Date,Deep Work Hours,Reading,Writing,Coding,Mathematics,Projects
@@ -47,10 +45,10 @@ Date,Deep Work Hours,Reading,Writing,Coding,Mathematics,Projects
 ...
 ```
 
-For the `MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like! 
+For the `MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like. 
 
 Notes about the `table.csv` file:
-- Only category columns (in this case, "Reading", "Writing", "Coding", and "Mathematics") should be deleted. You can add as many category columns, as needed. 
+- Only the category columns (in this case, "Reading", "Writing", "Coding", "Mathematics", and "Projects") in this file should be replaced/deleted. 
 - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
 
 3. Run the script:
@@ -64,6 +62,7 @@ python update_monthly_summary.py
 - `monthly_summary.md`
 - `figures/pie_chart.png`
 - `figures/stacked_bar_graph.png`
+- `figures/heat_map.png`
 
 For the `june_2023` example, `monthly_summary.md` will generate the following information:
 
@@ -80,7 +79,7 @@ Additionally, `monthly_summary.md` will contain `pie_chart.png`, which will look
 
 ![Sample Pie Chart](june_2023/figures/pie_chart.png)
 
-And `stacked_bar_graph.png`, which will look like this:
+`stacked_bar_graph.png`, which will look like this:
 
 ![Sample Stacked Bar Graph](june_2023/figures/stacked_bar_graph.png)
 
