@@ -1,7 +1,6 @@
-Total Deep Work Hours: 110 
-Average Deep Work Hours per Day: 3.67 
-Maximum Deep Work Hours: 5 
-Minimum Deep Work Hours: 2 
+
+ ### Summary Statistics: 
+![Summary Statistics](figures/summary_stats.png) 
 
  ### Total Deep Work Hours Over Time: 
 ![Line Graph](figures/line_graph.png) 

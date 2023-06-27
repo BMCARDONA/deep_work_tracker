@@ -87,10 +87,15 @@ def generate_charts(file_path):
     # Save the facet plot as an HD image
     g.savefig('figures/facet_plot.png', dpi=600)
 
-    # Generate the bar chart
+    # Generate the bar chart for total deep work hours by category
     fig, ax = plt.subplots()
     palette = sns.color_palette('colorblind', len(labels))
-    ax.bar(labels, sizes, color=palette)
+    bars = ax.bar(labels, sizes, color=palette)
+
+    # Add the value to each bar
+    for bar in bars:
+        height = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width()/2, height, f"{height:.0f}", ha='center', va='bottom')
 
     # Add the title to the bar chart
     ax.set_title('Total Deep Work Hours (by Category)')
@@ -105,13 +110,33 @@ def generate_charts(file_path):
     # Save the bar chart as an image
     plt.savefig('figures/bar_chart.png', dpi=600)
 
+    # Generate the bar chart for summary statistics
+    fig, ax = plt.subplots()
+    summary_labels = ['Total', 'Average', 'Maximum', 'Minimum']
+    summary_values = [total_deep_work_hours, average_deep_work_hours, max_deep_work_hours, min_deep_work_hours]
+    bars = ax.bar(summary_labels, summary_values)
+
+    # Add the value to each bar
+    for bar in bars:
+        height = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width()/2, height, f"{height:.0f}", ha='center', va='bottom')
+
+    # Add the title to the bar chart
+    ax.set_title('Summary Statistics')
+
+    # Label the x and y axes
+    ax.set_xlabel('Statistic')
+    ax.set_ylabel('Deep Work Hours')
+
+    # Save the bar chart as an image
+    plt.savefig('figures/summary_stats.png', dpi=600)
+
 
     # Save the updated totals and summary statistics
     with open('monthly_summary.md', 'w') as f:
-        f.write(f'Total Deep Work Hours: {total_deep_work_hours} \n')
-        f.write(f'Average Deep Work Hours per Day: {average_deep_work_hours:.2f} \n')
-        f.write(f'Maximum Deep Work Hours: {max_deep_work_hours} \n')
-        f.write(f'Minimum Deep Work Hours: {min_deep_work_hours} \n')
+        # Add the summary statistics to the markdown file
+        f.write('\n ### Summary Statistics: \n')
+        f.write('![Summary Statistics](figures/summary_stats.png) \n')
 
         # Add the line graph to the markdown file
         f.write('\n ### Total Deep Work Hours Over Time: \n')
