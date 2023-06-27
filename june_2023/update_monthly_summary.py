@@ -29,20 +29,6 @@ def generate_charts(file_path):
     def format_autopct(pct):
         return f"{pct:.1f}%" if pct > 0 else ""
 
-    # Generate the heat map
-    heat_map_data = df.melt(id_vars='Date', value_vars=labels, var_name='Category', value_name='Hours')
-    
-    fig, ax = plt.subplots(figsize=(10, 10))
-    
-    sns.heatmap(heat_map_data.pivot(index='Date', columns='Category', values='Hours'), cmap='GnBu', linewidths=0.5, linecolor='lightgrey', ax=ax)
-    
-    ax.set_title('Deep Work Heat Map')
-
-    plt.xticks(rotation=45, ha='right')
-    
-    # Save the heat map as an image
-    plt.savefig('figures/heat_map.png', dpi=400)
-
     # Generate the line graph
     fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -111,14 +97,6 @@ def generate_charts(file_path):
         f.write(f'\nTotal Deep Work Hours (by Category):\n')
         for col, total in category_totals:
             f.write(f'  - {col}: {total}\n')
-    
-        # Add the pie chart to the markdown file
-        f.write('\n ### Deep Work Monthly Breakdown: \n')
-        f.write('![Pie Chart](figures/pie_chart.png) \n')
-
-        # Add the heat map to the markdown file
-        f.write('\n ### Deep Work Heat Map: \n')
-        f.write('![Heat Map](figures/heat_map.png) \n')
 
         # Add the line graph to the markdown file
         f.write('\n ### Total Deep Work Hours Over Time: \n')

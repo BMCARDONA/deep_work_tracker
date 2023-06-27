@@ -10,12 +10,6 @@ Total Deep Work Hours (by Category):
   - Mathematics: 27
   - Projects: 43
 
- ### Deep Work Monthly Breakdown: 
-![Pie Chart](figures/pie_chart.png) 
-
- ### Deep Work Heat Map: 
-![Heat Map](figures/heat_map.png) 
-
  ### Total Deep Work Hours Over Time: 
 ![Line Graph](figures/line_graph.png) 
 

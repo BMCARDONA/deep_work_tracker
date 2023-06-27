@@ -63,7 +63,6 @@ python update_monthly_summary.py
 - `monthly_summary.md`
 - `figures/line_graph.png`
 - `figures/facet_plot.png`
-- `figures/heat_map.png`
 
 For the `june_2023` example, `monthly_summary.md` will generate the following information:
 
@@ -81,14 +80,12 @@ Total Deep Work Hours (by Category):
 ```
 
 Additionally, `monthly_summary.md` will contain `line_graph.png`, which will look like this:
+
 ![Line Graph](june_2023/figures/line_graph.png)
 
 And `facet_plot.png`, which will look like this:
+
 ![Facet Plot](june_2023/figures/facet_plot.png)
-
-And `heat_map.png`, which will look like this:
-![Sample Heat Map](june_2023/figures/heat_map.png)
-
 
 ## Contributing
 
