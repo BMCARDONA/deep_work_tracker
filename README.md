@@ -55,7 +55,7 @@ Date,Reading,Writing,Coding,Mathematics
 
 _Note: a date in the “Date” column should be in the format `MM-DD-YYYY`._
 
-4. In your `MONTH_YEAR` directory, run the following script:
+4. In your duplicated `MONTH_YEAR` directory, run the following script:
 
 ```
 python update_monthly_summary.py
