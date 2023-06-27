@@ -29,17 +29,6 @@ def generate_charts(file_path):
     def format_autopct(pct):
         return f"{pct:.1f}%" if pct > 0 else ""
 
-    # Generate the pie chart
-    fig1, ax1 = plt.subplots()
-    ax1.pie(nonzero_sizes, labels=nonzero_labels, autopct=format_autopct, startangle=90)
-    ax1.axis('equal')
-
-    # Add the title to the pie chart
-    plt.title('Deep Work Monthly Breakdown')
-
-    # Save the pie chart as an image
-    plt.savefig('figures/pie_chart.png', dpi=400)
-
     # Generate the heat map
     heat_map_data = df.melt(id_vars='Date', value_vars=labels, var_name='Category', value_name='Hours')
     
@@ -94,6 +83,16 @@ def generate_charts(file_path):
         if col not in ['Date', 'Deep Work Hours']:
             category_totals.append((col, df[col].sum()))
 
+    # Create the facet plot
+    g = sns.FacetGrid(df.melt(id_vars='Date', value_vars=labels, var_name='Category', value_name='Hours'), row='Category', hue='Category', sharey=False)
+    g.map(sns.lineplot, 'Date', 'Hours')
+    g.set_xticklabels(rotation=45)
+    g.set_titles(row_template="{row_name}")
+
+    # Save the facet plot as an image
+    g.savefig('figures/facet_plot.png')
+
+
     # Save the updated totals and summary statistics
     with open('monthly_summary.md', 'w') as f:
         f.write(f'Total Deep Work Hours: {total_deep_work_hours} \n')
@@ -116,6 +115,10 @@ def generate_charts(file_path):
         # Add the line graph to the markdown file
         f.write('\n ### Total Deep Work Hours Over Time: \n')
         f.write('![Line Graph](figures/line_graph.png) \n')
+
+        # Add the facet plot to the markdown file
+        f.write('\n ### Deep Work Hours by Category Over Time: \n')
+        f.write('![Facet Plot](figures/facet_plot.png) \n')
 
 
 file_path = 'table.csv'
