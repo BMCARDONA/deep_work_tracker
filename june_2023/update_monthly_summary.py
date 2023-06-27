@@ -87,16 +87,31 @@ def generate_charts(file_path):
     # Save the facet plot as an HD image
     g.savefig('figures/facet_plot.png', dpi=600)
 
+    # Generate the bar chart
+    fig, ax = plt.subplots()
+    palette = sns.color_palette('colorblind', len(labels))
+    ax.bar(labels, sizes, color=palette)
+
+    # Add the title to the bar chart
+    ax.set_title('Total Deep Work Hours (by Category)')
+
+    # Label the x and y axes
+    ax.set_xlabel('Category')
+    ax.set_ylabel('Total Deep Work Hours')
+
+    # Add a light grey grid
+    ax.grid(color='lightgrey', linestyle='--', linewidth=0.5)
+
+    # Save the bar chart as an image
+    plt.savefig('figures/bar_chart.png', dpi=600)
+
+
     # Save the updated totals and summary statistics
     with open('monthly_summary.md', 'w') as f:
         f.write(f'Total Deep Work Hours: {total_deep_work_hours} \n')
         f.write(f'Average Deep Work Hours per Day: {average_deep_work_hours:.2f} \n')
         f.write(f'Maximum Deep Work Hours: {max_deep_work_hours} \n')
         f.write(f'Minimum Deep Work Hours: {min_deep_work_hours} \n')
-
-        f.write(f'\nTotal Deep Work Hours (by Category):\n')
-        for col, total in category_totals:
-            f.write(f'  - {col}: {total}\n')
 
         # Add the line graph to the markdown file
         f.write('\n ### Total Deep Work Hours Over Time: \n')
@@ -105,6 +120,9 @@ def generate_charts(file_path):
         # Add the facet plot to the markdown file
         f.write('\n ### Deep Work Hours by Category Over Time: \n')
         f.write('![Facet Plot](figures/facet_plot.png) \n')
+
+        f.write('\n ### Total Deep Work Hours (by Category): \n')
+        f.write('![Bar Chart](figures/bar_chart.png) \n')
 
 
 file_path = 'table.csv'

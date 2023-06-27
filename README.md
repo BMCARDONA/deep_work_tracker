@@ -62,7 +62,7 @@ python update_monthly_summary.py
 - `figures/line_graph.png`
 - `figures/facet_plot.png`
 
-For the `june_2023` example, `monthly_summary.md` will contain the following information:
+For the `june_2023` example (see the directory above), `monthly_summary.md` will contain the following statistics:
 
 ```
 Total Deep Work Hours: 110 
@@ -75,21 +75,19 @@ Total Deep Work Hours (by Category):
   - Writing: 11
   - Coding: 48
   - Mathematics: 27
-
- ### Total Deep Work Hours Over Time: 
-![Line Graph](figures/line_graph.png) 
-
- ### Deep Work Hours by Category Over Time: 
-![Facet Plot](figures/facet_plot.png) 
 ```
 
 Additionally, `monthly_summary.md` will contain `line_graph.png`, which will look like this:
 
 ![Line Graph](june_2023/figures/line_graph.png)
 
-And `facet_plot.png`, which will look like this:
+`facet_plot.png`, which will look like this:
 
 ![Facet Plot](june_2023/figures/facet_plot.png)
+
+`bar_chart.png`, which will look like this:
+
+![Bar Chart](june_2023/figures/bar_chart.png)
 
 ## Contributing
 
