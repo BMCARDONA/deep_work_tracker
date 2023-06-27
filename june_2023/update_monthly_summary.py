@@ -104,9 +104,6 @@ def generate_charts(file_path):
     ax.set_xlabel('Category')
     ax.set_ylabel('Total Deep Work Hours')
 
-    # Add a light grey grid
-    ax.grid(color='lightgrey', linestyle='--', linewidth=0.5)
-
     # Save the bar chart as an image
     plt.savefig('figures/bar_chart.png', dpi=600)
 
