@@ -1,6 +1,6 @@
 # Deep Work Tracker
 
-Deep Work Tracker is a productivity tool designed to help you track a state of peak concentration known as deep work. By incorporating deep work into your workflow, you can learn hard things and create high-quality work efficiently. This repository provides a simple solution for tracking your daily results. To add a daily entry to a monthly log, you need only update a CSV file and run a Python script :)
+Deep Work Tracker is a productivity tool designed to help you track a state of peak concentration known as deep work. By incorporating deep work into your workflow, you can learn hard things and create high-quality work efficiently. This repository provides a simple solution for tracking your daily results. 
 
 ## Table of Contents
   - [Installation](#installation)
