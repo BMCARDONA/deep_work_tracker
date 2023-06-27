@@ -37,11 +37,10 @@ pip install pandas matplotlib seaborn plotly-express
 
 ```
 Date,Reading,Writing,Coding,Mathematics
-2023-06-01,1,0,2,1
-2023-06-02,0,1,2,1
-2023-06-03,0,0,2,1
-2023-06-04,1,3,0,0
-2023-06-05,1,0,2,1
+06-01-2023,1,0,2,1
+06-02-2023,0,1,2,1
+06-03-2023,0,0,2,1
+06-04-2023,1,3,0,0
 ...
 ```
 
@@ -49,7 +48,7 @@ For the `MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month
 
 Notes about the `table.csv` file:
 - Replace the category columns (in this case, the "Reading", "Writing", "Coding", and "Mathematics" columns) with columns of your own. (You should have at least one of these columns in the table, but you can add as many as you'd like.)
-- A date in the “Date” column should be in the format `YYYY-MM-DD`. 
+- A date in the “Date” column should be in the format `MM-DD-YYYY`. 
 
 3. Run the script:
 
@@ -63,7 +62,7 @@ python update_monthly_summary.py
 - `figures/line_graph.png`
 - `figures/facet_plot.png`
 
-For the `june_2023` example, `monthly_summary.md` will generate the following information:
+For the `june_2023` example, `monthly_summary.md` will contain the following information:
 
 ```
 Total Deep Work Hours: 110 
