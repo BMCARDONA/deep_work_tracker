@@ -70,10 +70,10 @@ Three files will be generated in your `MONTH_YEAR` directory:
 For the default `MONTH_YEAR` directory above, `monthly_summary.md` will look like this:
 
  ### Monthly Breakdown: 
-![Bar Chart](figures/monthly_breakdown.png) 
+![Bar Chart](MONTH_YEAR/figures/monthly_breakdown.png) 
 
  ### Daily Breakdown: 
-![Facet Plot](figures/daily_breakdown.png) 
+![Facet Plot](MONTH_YEAR/figures/daily_breakdown.png) 
 
 
 ## Contributing
