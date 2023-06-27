@@ -91,10 +91,10 @@ And `heat_map.png`, which will look like this:
 ![Sample Heat Map](june_2023/figures/heat_map.png)
 
 And `line_graph.png`, which will look like this:
-![Line Graph](figures/line_graph.png)
+![Line Graph](june_2023/figures/line_graph.png)
 
 And `interactive_line_graph.html`, which will look like this:
-![Interactive Line Graph](figures/interactive_line_graph.html)
+![Interactive Line Graph](june_2023/figures/interactive_line_graph.html)
 
 ## Contributing
 
