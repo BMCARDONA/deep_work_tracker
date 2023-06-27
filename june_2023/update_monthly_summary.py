@@ -128,12 +128,6 @@ def generate_charts(file_path):
     # Save the line graph as an image
     plt.savefig('figures/new_line_graph.png', dpi=400)
 
-    # Generate the interactive line graph
-    fig = px.line(df, x='Date', y=df.columns[1:], title='Deep Work Hours by Category Over Time')
-
-    # Save the interactive line graph as an HTML file
-    fig.write_html('figures/interactive_line_graph.html')
-
     # Save the updated totals and summary statistics
     with open('monthly_summary.md', 'w') as f:
         f.write(f'Total Deep Work Hours: {total_deep_work_hours} \n')
@@ -156,9 +150,6 @@ def generate_charts(file_path):
         # Add the line graph to the markdown file
         f.write('\n ### Total Deep Work Hours Over Time: \n')
         f.write('![Line Graph](figures/line_graph.png) \n')
-
-        f.write('\n ### Deep Work Hours by Category Over Time (Interactive): \n')
-        f.write('[Interactive Line Graph](figures/interactive_line_graph.html) \n')
 
 
 file_path = 'table.csv'
