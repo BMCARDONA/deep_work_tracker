@@ -65,7 +65,7 @@ def generate_charts(file_path):
     plt.subplots_adjust(bottom=0.2)
 
     # Save the line graph as an image
-    plt.savefig('figures/line_graph.png', dpi=400)
+    plt.savefig('figures/line_graph.png', dpi=600)
 
     # Sum the "Deep Work Hours" column and make that the value of "Total Deep Work Hours"
     total_deep_work_hours = df['Deep Work Hours'].sum()
@@ -84,14 +84,22 @@ def generate_charts(file_path):
             category_totals.append((col, df[col].sum()))
 
     # Create the facet plot
-    g = sns.FacetGrid(df.melt(id_vars='Date', value_vars=labels, var_name='Category', value_name='Hours'), row='Category', hue='Category', sharey=False)
-    g.map(sns.lineplot, 'Date', 'Hours')
+    g = sns.FacetGrid(df.melt(id_vars='Date', value_vars=labels, var_name='Category', value_name='Hours'), row='Category', hue='Category', sharey=False, height=2.5, aspect=4)
+    g.map(sns.lineplot, 'Date', 'Hours', marker='o')
     g.set_xticklabels(rotation=45)
     g.set_titles(row_template="{row_name}")
 
-    # Save the facet plot as an image
-    g.savefig('figures/facet_plot.png')
+    # Set the x-axis ticks to show all dates
+    for ax in g.axes.flat:
+        ax.set_xticks(range(len(df)))
+        ax.set_xticklabels(df['Date'], rotation=45, ha='right')
 
+    # Add a light grey grid to each graph
+    for ax in g.axes.flat:
+        ax.grid(color='lightgrey', linestyle='--', linewidth=0.5)
+
+    # Save the facet plot as an HD image
+    g.savefig('figures/facet_plot.png', dpi=600)
 
     # Save the updated totals and summary statistics
     with open('monthly_summary.md', 'w') as f:
