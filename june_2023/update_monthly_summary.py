@@ -66,9 +66,6 @@ def generate_charts(file_path):
     ax.set_xticks(range(len(df)))
     ax.set_xticklabels(df['Date'], rotation=45, ha='right')
 
-    # Set the y-axis to start at 0
-    ax.set_ylim(bottom=0)
-
     # Add a light grey grid
     ax.grid(color='lightgrey', linestyle='--', linewidth=0.5)
 
@@ -96,37 +93,6 @@ def generate_charts(file_path):
     for col in df.columns:
         if col not in ['Date', 'Deep Work Hours']:
             category_totals.append((col, df[col].sum()))
-
-    # Generate the line graph with overlapping transparent lines
-    fig, ax = plt.subplots(figsize=(10, 6))
-    for col in df.columns:
-        if col not in ['Date', 'Deep Work Hours']:
-            df.plot(x='Date', y=col, marker='o', alpha=0.5, ax=ax)
-
-    # Add the title to the line graph
-    ax.set_title('Deep Work Hours by Category Over Time')
-
-    # Set the x-axis ticks to show all dates
-    ax.set_xticks(range(len(df)))
-    ax.set_xticklabels(df['Date'], rotation=45, ha='right')
-
-    # Set the y-axis to start at 0
-    ax.set_ylim(bottom=0)
-
-    # Add a light grey grid
-    ax.grid(color='lightgrey', linestyle='--', linewidth=0.5)
-
-    # Label the y-axis
-    ax.set_ylabel('Deep Work Hours')
-
-    # Adjust the margins around the plot
-    plt.subplots_adjust(bottom=0.2)
-
-    # Add a legend
-    ax.legend(loc='upper left')
-
-    # Save the line graph as an image
-    plt.savefig('figures/new_line_graph.png', dpi=400)
 
     # Save the updated totals and summary statistics
     with open('monthly_summary.md', 'w') as f:
