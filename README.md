@@ -40,7 +40,7 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 pip install pandas matplotlib seaborn
 ```
 
-2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory to track the hours you've spent per day in each category:
+2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory to track the hours you've spent per day in each category. The example table in the `MONTH_YEAR` is as follows:
 
 ```
 Date,Reading,Writing,Coding,Mathematics
@@ -51,7 +51,7 @@ Date,Reading,Writing,Coding,Mathematics
 ...
 ```
 
-For the `MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like. 
+Duplicate the `MONTH_YEAR` directory for the month for which you want to monitor your deep work hours. Replace MONTH_YEAR with the appropriate month and year. Repeat this process for every month you wish to track, creating separate directories for each. 
 
 Notes about the `table.csv` file:
 - Replace the category columns (in this case, the "Reading", "Writing", "Coding", and "Mathematics" columns) with columns of your own. (You should have at least one of these columns in the table, but you can add as many as you'd like.)
@@ -69,13 +69,13 @@ python update_monthly_summary.py
 - `figures/monthly_breakdown.png`
 - `figures/daily_breakdown.png`
 
-For the `june_2023` example (see the directory above), `monthly_summary.md` will contain `monthly_breakdown.png`, which will look like this:
+For the `MONTH_YEAR` example directory above, `monthly_summary.md` will contain `monthly_breakdown.png`, which will look like this:
 
-![Bar Chart](june_2023/figures/monthly_breakdown.png)
+![Bar Chart](MONTH_YEAR/figures/monthly_breakdown.png)
 
 And `daily_breakdown.png`, which will look like this:
 
-![Facet Plot](june_2023/figures/daily_breakdown.png)
+![Facet Plot](MONTH_YEAR/figures/daily_breakdown.png)
 
 
 ## Contributing
