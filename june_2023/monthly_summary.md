@@ -18,3 +18,6 @@ Total Deep Work Hours (by Category):
 
  ### Total Deep Work Hours Over Time: 
 ![Line Graph](figures/line_graph.png) 
+
+ ### Deep Work Hours by Category Over Time: 
+![Facet Plot](figures/facet_plot.png) 
