@@ -48,7 +48,7 @@ Date,Reading,Writing,Coding,Mathematics
 For the `MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like. 
 
 Notes about the `table.csv` file:
-- Replace the category columns (in this case, the "Reading", "Writing", "Coding", "Mathematics", and "Projects" columns) with columns of your own. (You should have at least one of these columns in the table, but you can add as many as you'd like.)
+- Replace the category columns (in this case, the "Reading", "Writing", "Coding", and "Mathematics" columns) with columns of your own. (You should have at least one of these columns in the table, but you can add as many as you'd like.)
 - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
 
 3. Run the script:
