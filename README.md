@@ -2,7 +2,7 @@
 
 Deep work is a state of peak concentration that lets one learn hard things and create quality work quickly. The goal of this repository is to allow you to track the accomplishments you've made by incorporating deep work into your workflow. To add a daily entry to a monthly log, you need only update a CSV file and run a Python script.
 
-- [Deep Work Tracker](#deep-work-tracker)
+## Table of Contents
   - [Installation](#installation)
   - [Dependencies](#dependencies)
   - [Usage](#usage)
