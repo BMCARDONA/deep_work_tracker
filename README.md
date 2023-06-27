@@ -20,9 +20,9 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 
 ## Dependencies
 
-- pandas
-- matplotlib
-- seaborn 
+- Pandas
+- Matplotlib
+- Seaborn 
 
 ## Usage
 
