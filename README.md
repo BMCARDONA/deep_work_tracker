@@ -94,7 +94,7 @@ And `line_graph.png`, which will look like this:
 ![Line Graph](june_2023/figures/line_graph.png)
 
 And `interactive_line_graph.html`, which will look like this:
-![Interactive Line Graph](june_2023/figures/interactive_line_graph.html)
+[Interactive Line Graph](june_2023/figures/interactive_line_graph.html)
 
 ## Contributing
 
