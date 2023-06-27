@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
 
 def generate_charts(file_path):
     # Set the color palette
@@ -39,32 +40,6 @@ def generate_charts(file_path):
     # Save the pie chart as an image
     plt.savefig('figures/pie_chart.png', dpi=400)
 
-    # Generate the stacked bar graph
-    data = {'Date': df['Date']}
-    for col in df.columns:
-        if col not in ['Date', 'Deep Work Hours']:
-            data[col] = df[col]
-    
-    plot_data = pd.DataFrame(data)
-
-    # Filter out columns with all zero values from plot_data
-    plot_data = plot_data.loc[:, (plot_data != 0).any(axis=0)]
-
-    # Increase the size of the figure
-    fig, ax = plt.subplots(figsize=(10, 10))
-    
-    plot_data.plot(x='Date', kind='bar', stacked=True, ax=ax)
-
-    # Add the title to the stacked bar graph
-    ax.set_title('Deep Work Daily Breakdown')
-
-    # Rotate the dates and label the y-axis
-    plt.xticks(rotation=45, ha='right')
-    ax.set_ylabel('Deep Work Hours')
-
-    # Save the stacked bar graph as an image
-    plt.savefig('figures/stacked_bar_graph.png', dpi=400)
-
     # Generate the heat map
     heat_map_data = df.melt(id_vars='Date', value_vars=labels, var_name='Category', value_name='Hours')
     
@@ -79,8 +54,42 @@ def generate_charts(file_path):
     # Save the heat map as an image
     plt.savefig('figures/heat_map.png', dpi=400)
 
+    # Generate the line graph
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    df.plot(x='Date', y='Deep Work Hours', marker='o', color='orange', ax=ax)
+
+    # Add the title to the line graph
+    ax.set_title('Total Deep Work Hours Over Time')
+
+    # Set the x-axis ticks to show all dates
+    ax.set_xticks(range(len(df)))
+    ax.set_xticklabels(df['Date'], rotation=45, ha='right')
+
+    # Set the y-axis to start at 0
+    ax.set_ylim(bottom=0)
+
+    # Add a light grey grid
+    ax.grid(color='lightgrey', linestyle='--', linewidth=0.5)
+
+    # Label the y-axis
+    ax.set_ylabel('Deep Work Hours')
+
+    # Adjust the margins around the plot
+    plt.subplots_adjust(bottom=0.2)
+
+    # Save the line graph as an image
+    plt.savefig('figures/line_graph.png', dpi=400)
+
     # Sum the "Deep Work Hours" column and make that the value of "Total Deep Work Hours"
     total_deep_work_hours = df['Deep Work Hours'].sum()
+
+    # Calculate the average deep work hours per day
+    average_deep_work_hours = total_deep_work_hours / len(df)
+
+    # Find the maximum and minimum deep work hours
+    max_deep_work_hours = df['Deep Work Hours'].max()
+    min_deep_work_hours = df['Deep Work Hours'].min()
 
     # Sum the values of each column that is NOT "Date" or "Deep Work Hours"
     category_totals = []
@@ -88,11 +97,51 @@ def generate_charts(file_path):
         if col not in ['Date', 'Deep Work Hours']:
             category_totals.append((col, df[col].sum()))
 
-    # Save the updated totals
+    # Generate the line graph with overlapping transparent lines
+    fig, ax = plt.subplots(figsize=(10, 6))
+    for col in df.columns:
+        if col not in ['Date', 'Deep Work Hours']:
+            df.plot(x='Date', y=col, marker='o', alpha=0.5, ax=ax)
+
+    # Add the title to the line graph
+    ax.set_title('Deep Work Hours by Category Over Time')
+
+    # Set the x-axis ticks to show all dates
+    ax.set_xticks(range(len(df)))
+    ax.set_xticklabels(df['Date'], rotation=45, ha='right')
+
+    # Set the y-axis to start at 0
+    ax.set_ylim(bottom=0)
+
+    # Add a light grey grid
+    ax.grid(color='lightgrey', linestyle='--', linewidth=0.5)
+
+    # Label the y-axis
+    ax.set_ylabel('Deep Work Hours')
+
+    # Adjust the margins around the plot
+    plt.subplots_adjust(bottom=0.2)
+
+    # Add a legend
+    ax.legend(loc='upper left')
+
+    # Save the line graph as an image
+    plt.savefig('figures/new_line_graph.png', dpi=400)
+
+    # Generate the interactive line graph
+    fig = px.line(df, x='Date', y=df.columns[1:], title='Deep Work Hours by Category Over Time')
+
+    # Save the interactive line graph as an HTML file
+    fig.write_html('figures/interactive_line_graph.html')
+
+    # Save the updated totals and summary statistics
     with open('monthly_summary.md', 'w') as f:
         f.write(f'Total Deep Work Hours: {total_deep_work_hours} \n')
+        f.write(f'Average Deep Work Hours per Day: {average_deep_work_hours:.2f} \n')
+        f.write(f'Maximum Deep Work Hours: {max_deep_work_hours} \n')
+        f.write(f'Minimum Deep Work Hours: {min_deep_work_hours} \n')
 
-        f.write(f'Total Deep Work Hours (by Category):\n')
+        f.write(f'\nTotal Deep Work Hours (by Category):\n')
         for col, total in category_totals:
             f.write(f'  - {col}: {total}\n')
     
@@ -100,14 +149,17 @@ def generate_charts(file_path):
         f.write('\n ### Deep Work Monthly Breakdown: \n')
         f.write('![Pie Chart](figures/pie_chart.png) \n')
 
-        # Add the stacked bar graph to the markdown file
-        f.write('\n ### Deep Work Daily Breakdown: \n')
-        f.write('![Stacked Bar Graph](figures/stacked_bar_graph.png) \n')
-        
         # Add the heat map to the markdown file
         f.write('\n ### Deep Work Heat Map: \n')
         f.write('![Heat Map](figures/heat_map.png) \n')
 
+        # Add the line graph to the markdown file
+        f.write('\n ### Total Deep Work Hours Over Time: \n')
+        f.write('![Line Graph](figures/line_graph.png) \n')
+
+        f.write('\n ### Deep Work Hours by Category Over Time (Interactive): \n')
+        f.write('[Interactive Line Graph](figures/interactive_line_graph.html) \n')
+
+
 file_path = 'table.csv'
 generate_charts(file_path)
-
