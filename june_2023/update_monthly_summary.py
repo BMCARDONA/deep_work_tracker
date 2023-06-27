@@ -9,6 +9,9 @@ def generate_charts(file_path):
     # Read the CSV file into a pandas DataFrame
     df = pd.read_csv(file_path)
 
+    # Calculate the "Deep Work Hours" column as the sum of the other columns
+    df['Deep Work Hours'] = df.drop('Date', axis=1).sum(axis=1)
+
     # Sum the values of each column that is NOT "Date" or "Deep Work Hours"
     labels = []
     sizes = []
@@ -70,7 +73,7 @@ def generate_charts(file_path):
     sns.heatmap(heat_map_data.pivot(index='Date', columns='Category', values='Hours'), cmap='GnBu', linewidths=0.5, linecolor='lightgrey', ax=ax)
     
     ax.set_title('Deep Work Heat Map')
-    
+
     plt.xticks(rotation=45, ha='right')
     
     # Save the heat map as an image
@@ -107,3 +110,4 @@ def generate_charts(file_path):
 
 file_path = 'table.csv'
 generate_charts(file_path)
+
