@@ -88,4 +88,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 
 ## Acknowledgments
-This project is inspired by the principles and concepts introduced by Cal Newport in his book [Deep Work: Rules for Focused Success in a Distracted World](https://www.amazon.com/Deep-Work-Focused-Success-Distracted/dp/1455586692). We would like to express our gratitude to Cal Newport for his insightful work and for highlighting the importance of deep work in achieving focused success in a distracted world.
+This project is inspired by the principles and concepts introduced by Cal Newport in his book [Deep Work: Rules for Focused Success in a Distracted World](https://www.amazon.com/Deep-Work-Focused-Success-Distracted/dp/1455586692). We would like to express our gratitude to Cal Newport for his insightful work and for highlighting the importance of deep work in producing quality results. 
