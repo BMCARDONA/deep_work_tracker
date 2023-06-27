@@ -67,16 +67,17 @@ python update_monthly_summary.py
 For the `june_2023` example, `monthly_summary.md` will generate the following information:
 
 ```
-Total Deep Work Hours: 66
-Average Deep Work Hours per Day: 2.20
-Maximum Deep Work Hours: 6
-Minimum Deep Work Hours: 4
+Total Deep Work Hours: 153 
+Average Deep Work Hours per Day: 5.10 
+Maximum Deep Work Hours: 6 
+Minimum Deep Work Hours: 4 
 
 Total Deep Work Hours (by Category):
-  - Reading: 12
-  - Writing: 18
-  - Coding: 13
-  - Mathematics: 23
+  - Reading: 24
+  - Writing: 11
+  - Coding: 48
+  - Mathematics: 27
+  - Projects: 43
 ```
 
 Additionally, `monthly_summary.md` will contain `line_graph.png`, which will look like this:
