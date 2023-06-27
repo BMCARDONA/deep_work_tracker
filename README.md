@@ -67,7 +67,7 @@ Three files will be generated in your `MONTH_YEAR` directory:
 - `figures/monthly_breakdown.png`
 - `figures/daily_breakdown.png`
 
-For the default `MONTH_YEAR` directory above, `monthly_summary.md` will look like this:
+For the default `MONTH_YEAR` directory, `monthly_summary.md` will look like this:
 
  ### Monthly Breakdown: 
 ![Bar Chart](MONTH_YEAR/figures/monthly_breakdown.png) 
