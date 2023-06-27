@@ -18,6 +18,3 @@ Total Deep Work Hours (by Category):
 
  ### Total Deep Work Hours Over Time: 
 ![Line Graph](figures/line_graph.png) 
-
- ### Deep Work Hours by Category Over Time (Interactive): 
-[Interactive Line Graph](figures/interactive_line_graph.html) 
