@@ -32,23 +32,23 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 pip install pandas matplotlib seaborn
 ```
 
-2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory in the following format:
+2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory to track the hours you've spent per day in each category:
 
 ```
-Date,Deep Work Hours,Reading,Writing,Coding,Mathematics,Projects
-2023-06-01,6,1,0,2,1,2
-2023-06-02,6,0,1,2,1,2
-2023-06-03,5,0,0,2,1,2
-2023-06-04,6,1,3,0,0,2
-2023-06-05,5,1,0,2,1,2
-2023-06-06,4,1,0,0,1,2
+Date,Reading,Writing,Coding,Mathematics,Projects
+2023-06-01,1,0,2,1,2
+2023-06-02,0,1,2,1,2
+2023-06-03,0,0,2,1,2
+2023-06-04,1,3,0,0,2
+2023-06-05,1,0,2,1,2
+2023-06-06,1,0,0,1,2
 ...
 ```
 
 For the `MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like. 
 
 Notes about the `table.csv` file:
-- Only the category columns (in this case, "Reading", "Writing", "Coding", "Mathematics", and "Projects") in this file should be replaced/deleted. 
+- Replace the category columns (in this case, the "Reading", "Writing", "Coding", "Mathematics", and "Projects" columns) with your own. (You should have at least one of these columns in the table, but you can add as many as you'd like.)
 - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
 
 3. Run the script:
