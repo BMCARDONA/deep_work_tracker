@@ -36,13 +36,12 @@ pip install pandas matplotlib seaborn plotly-express
 2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory to track the hours you've spent per day in each category:
 
 ```
-Date,Reading,Writing,Coding,Mathematics,Projects
-2023-06-01,1,0,2,1,2
-2023-06-02,0,1,2,1,2
-2023-06-03,0,0,2,1,2
-2023-06-04,1,3,0,0,2
-2023-06-05,1,0,2,1,2
-2023-06-06,1,0,0,1,2
+Date,Reading,Writing,Coding,Mathematics
+2023-06-01,1,0,2,1
+2023-06-02,0,1,2,1
+2023-06-03,0,0,2,1
+2023-06-04,1,3,0,0
+2023-06-05,1,0,2,1
 ...
 ```
 
@@ -67,17 +66,22 @@ python update_monthly_summary.py
 For the `june_2023` example, `monthly_summary.md` will generate the following information:
 
 ```
-Total Deep Work Hours: 153 
-Average Deep Work Hours per Day: 5.10 
-Maximum Deep Work Hours: 6 
-Minimum Deep Work Hours: 4 
+Total Deep Work Hours: 110 
+Average Deep Work Hours per Day: 3.67 
+Maximum Deep Work Hours: 5 
+Minimum Deep Work Hours: 2 
 
 Total Deep Work Hours (by Category):
   - Reading: 24
   - Writing: 11
   - Coding: 48
   - Mathematics: 27
-  - Projects: 43
+
+ ### Total Deep Work Hours Over Time: 
+![Line Graph](figures/line_graph.png) 
+
+ ### Deep Work Hours by Category Over Time: 
+![Facet Plot](figures/facet_plot.png) 
 ```
 
 Additionally, `monthly_summary.md` will contain `line_graph.png`, which will look like this:
