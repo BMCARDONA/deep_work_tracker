@@ -23,13 +23,14 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 - Pandas
 - Matplotlib
 - Seaborn 
+- Plotly Express
 
 ## Usage
 
 1. Install the dependencies using pip:
 
 ```
-pip install pandas matplotlib seaborn
+pip install pandas matplotlib seaborn plotly-express
 ```
 
 2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory to track the hours you've spent per day in each category:
@@ -48,7 +49,7 @@ Date,Reading,Writing,Coding,Mathematics,Projects
 For the `MONTH_YEAR` directory, make sure to replace `MONTH_YEAR` with the month and year for which you want to track your deep work hours. Add as many of these directories as you'd like. 
 
 Notes about the `table.csv` file:
-- Replace the category columns (in this case, the "Reading", "Writing", "Coding", "Mathematics", and "Projects" columns) with your own. (You should have at least one of these columns in the table, but you can add as many as you'd like.)
+- Replace the category columns (in this case, the "Reading", "Writing", "Coding", "Mathematics", and "Projects" columns) with columns of your own. (You should have at least one of these columns in the table, but you can add as many as you'd like.)
 - A date in the “Date” column should be in the format `YYYY-MM-DD`. 
 
 3. Run the script:
@@ -61,13 +62,19 @@ python update_monthly_summary.py
 
 - `monthly_summary.md`
 - `figures/pie_chart.png`
-- `figures/stacked_bar_graph.png`
 - `figures/heat_map.png`
+- `figures/line_graph.png`
+- `figures/new_line_graph.png`
+- `figures/interactive_line_graph.html`
 
 For the `june_2023` example, `monthly_summary.md` will generate the following information:
 
 ```
 Total Deep Work Hours: 66
+Average Deep Work Hours per Day: 2.20
+Maximum Deep Work Hours: 6
+Minimum Deep Work Hours: 4
+
 Total Deep Work Hours (by Category):
   - Reading: 12
   - Writing: 18
@@ -79,13 +86,15 @@ Additionally, `monthly_summary.md` will contain `pie_chart.png`, which will look
 
 ![Sample Pie Chart](june_2023/figures/pie_chart.png)
 
-`stacked_bar_graph.png`, which will look like this:
-
-![Sample Stacked Bar Graph](june_2023/figures/stacked_bar_graph.png)
-
 And `heat_map.png`, which will look like this:
 
 ![Sample Heat Map](june_2023/figures/heat_map.png)
+
+And `line_graph.png`, which will look like this:
+![Line Graph](figures/line_graph.png)
+
+And `interactive_line_graph.html`, which will look like this:
+![Interactive Line Graph](figures/interactive_line_graph.html)
 
 ## Contributing
 
@@ -94,15 +103,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
-
-
-
-
-
-
-
-
-
-
