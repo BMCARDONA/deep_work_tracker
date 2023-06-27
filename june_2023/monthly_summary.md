@@ -1,12 +1,6 @@
 
- ### Summary Statistics: 
-![Summary Statistics](figures/summary_stats.png) 
+ ### Monthly Breakdown: 
+![Bar Chart](figures/monthly_breakdown.png) 
 
- ### Total Deep Work Hours Over Time: 
-![Line Graph](figures/line_graph.png) 
-
- ### Deep Work Hours by Category Over Time: 
-![Facet Plot](figures/facet_plot.png) 
-
- ### Total Deep Work Hours (by Category): 
-![Bar Chart](figures/bar_chart.png) 
+ ### Daily Breakdown: 
+![Facet Plot](figures/daily_breakdown.png) 

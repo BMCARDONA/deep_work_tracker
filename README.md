@@ -23,14 +23,13 @@ To **download** the zip files, click on the `Code` button in the top-right corne
 - Pandas
 - Matplotlib
 - Seaborn 
-- Plotly Express
 
 ## Usage
 
 1. Install the dependencies using pip:
 
 ```
-pip install pandas matplotlib seaborn plotly-express
+pip install pandas matplotlib seaborn
 ```
 
 2. Add rows to the `table.csv` file located in the `MONTH_YEAR` directory to track the hours you've spent per day in each category:
@@ -59,35 +58,17 @@ python update_monthly_summary.py
 4. The following files will be generated:
 
 - `monthly_summary.md`
-- `figures/line_graph.png`
-- `figures/facet_plot.png`
+- `figures/monthly_breakdown.png`
+- `figures/daily_breakdown.png`
 
-For the `june_2023` example (see the directory above), `monthly_summary.md` will contain the following statistics:
+For the `june_2023` example (see the directory above), `monthly_summary.md` will contain `monthly_breakdown.png`, which will look like this:
 
-```
-Total Deep Work Hours: 110 
-Average Deep Work Hours per Day: 3.67 
-Maximum Deep Work Hours: 5 
-Minimum Deep Work Hours: 2 
+![Bar Chart](june_2023/figures/monthly_breakdown.png)
 
-Total Deep Work Hours (by Category):
-  - Reading: 24
-  - Writing: 11
-  - Coding: 48
-  - Mathematics: 27
-```
+And `daily_breakdown.png`, which will look like this:
 
-Additionally, `monthly_summary.md` will contain `line_graph.png`, which will look like this:
+![Facet Plot](june_2023/figures/daily_breakdown.png)
 
-![Line Graph](june_2023/figures/line_graph.png)
-
-`facet_plot.png`, which will look like this:
-
-![Facet Plot](june_2023/figures/facet_plot.png)
-
-`bar_chart.png`, which will look like this:
-
-![Bar Chart](june_2023/figures/bar_chart.png)
 
 ## Contributing
 

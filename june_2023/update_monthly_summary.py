@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly.express as px
 
 def generate_charts(file_path):
     # Set the color palette
@@ -25,52 +24,13 @@ def generate_charts(file_path):
     nonzero_sizes = [size for size in sizes if size > 0]
     nonzero_labels = [label for label, size in zip(labels, sizes) if size > 0]
 
-    # Define a custom function to format the percentage labels
-    def format_autopct(pct):
-        return f"{pct:.1f}%" if pct > 0 else ""
+    #=========================== FACET PLOT ===========================
 
-    # Generate the line graph
-    fig, ax = plt.subplots(figsize=(10, 6))
-
-    df.plot(x='Date', y='Deep Work Hours', marker='o', color='orange', ax=ax)
-
-    # Add the title to the line graph
-    ax.set_title('Total Deep Work Hours Over Time')
-
-    # Set the x-axis ticks to show all dates
-    ax.set_xticks(range(len(df)))
-    ax.set_xticklabels(df['Date'], rotation=45, ha='right')
-
-    # Add a light grey grid
-    ax.grid(color='lightgrey', linestyle='--', linewidth=0.5)
-
-    # Label the y-axis
-    ax.set_ylabel('Deep Work Hours')
-
-    # Adjust the margins around the plot
-    plt.subplots_adjust(bottom=0.2)
-
-    # Save the line graph as an image
-    plt.savefig('figures/line_graph.png', dpi=600)
-
-    # Sum the "Deep Work Hours" column and make that the value of "Total Deep Work Hours"
-    total_deep_work_hours = df['Deep Work Hours'].sum()
-
-    # Calculate the average deep work hours per day
-    average_deep_work_hours = total_deep_work_hours / len(df)
-
-    # Find the maximum and minimum deep work hours
-    max_deep_work_hours = df['Deep Work Hours'].max()
-    min_deep_work_hours = df['Deep Work Hours'].min()
-
-    # Sum the values of each column that is NOT "Date" or "Deep Work Hours"
-    category_totals = []
-    for col in df.columns:
-        if col not in ['Date', 'Deep Work Hours']:
-            category_totals.append((col, df[col].sum()))
+    # Set the color palette
+    palette = sns.color_palette('colorblind', len(nonzero_labels) + 1)
 
     # Create the facet plot
-    g = sns.FacetGrid(df.melt(id_vars='Date', value_vars=labels, var_name='Category', value_name='Hours'), row='Category', hue='Category', sharey=False, height=2.5, aspect=4)
+    g = sns.FacetGrid(df.melt(id_vars='Date', value_vars=nonzero_labels + ['Deep Work Hours'], var_name='Category', value_name='Hours'), row='Category', hue='Category', sharey=False, height=2.5, aspect=4)
     g.map(sns.lineplot, 'Date', 'Hours', marker='o')
     g.set_xticklabels(rotation=45)
     g.set_titles(row_template="{row_name}")
@@ -85,12 +45,17 @@ def generate_charts(file_path):
         ax.grid(color='lightgrey', linestyle='--', linewidth=0.5)
 
     # Save the facet plot as an HD image
-    g.savefig('figures/facet_plot.png', dpi=600)
+    g.savefig('figures/daily_breakdown.png', dpi=600)
+
+    #=========================== BAR CHART ===========================
+
+    # Calculate the total deep work hours
+    total_deep_work_hours = df['Deep Work Hours'].sum()
 
     # Generate the bar chart for total deep work hours by category
     fig, ax = plt.subplots()
-    palette = sns.color_palette('colorblind', len(labels))
-    bars = ax.bar(labels, sizes, color=palette)
+    palette = sns.color_palette('colorblind', len(nonzero_labels) + 1)
+    bars = ax.bar(nonzero_labels + ['Total'], nonzero_sizes + [total_deep_work_hours], color=palette)
 
     # Add the value to each bar
     for bar in bars:
@@ -98,53 +63,26 @@ def generate_charts(file_path):
         ax.text(bar.get_x() + bar.get_width()/2, height, f"{height:.0f}", ha='center', va='bottom')
 
     # Add the title to the bar chart
-    ax.set_title('Total Deep Work Hours (by Category)')
+    ax.set_title('Monthly Breakdown')
 
-    # Label the x and y axes
-    ax.set_xlabel('Category')
+    # Label the y-axis
     ax.set_ylabel('Total Deep Work Hours')
 
     # Save the bar chart as an image
-    plt.savefig('figures/bar_chart.png', dpi=600)
+    plt.savefig('figures/monthly_breakdown.png', dpi=600)
 
-    # Generate the bar chart for summary statistics
-    fig, ax = plt.subplots()
-    summary_labels = ['Total', 'Average', 'Maximum', 'Minimum']
-    summary_values = [total_deep_work_hours, average_deep_work_hours, max_deep_work_hours, min_deep_work_hours]
-    bars = ax.bar(summary_labels, summary_values)
-
-    # Add the value to each bar
-    for bar in bars:
-        height = bar.get_height()
-        ax.text(bar.get_x() + bar.get_width()/2, height, f"{height:.0f}", ha='center', va='bottom')
-
-    # Add the title to the bar chart
-    ax.set_title('Summary Statistics')
-
-    # Label the x and y axes
-    ax.set_xlabel('Statistic')
-    ax.set_ylabel('Deep Work Hours')
-
-    # Save the bar chart as an image
-    plt.savefig('figures/summary_stats.png', dpi=600)
-
+    #=========================== MARKDOWN ===========================
 
     # Save the updated totals and summary statistics
     with open('monthly_summary.md', 'w') as f:
-        # Add the summary statistics to the markdown file
-        f.write('\n ### Summary Statistics: \n')
-        f.write('![Summary Statistics](figures/summary_stats.png) \n')
 
-        # Add the line graph to the markdown file
-        f.write('\n ### Total Deep Work Hours Over Time: \n')
-        f.write('![Line Graph](figures/line_graph.png) \n')
+        # Add the bar chart to the markdown file
+        f.write('\n ### Monthly Breakdown: \n')
+        f.write('![Bar Chart](figures/monthly_breakdown.png) \n')
 
         # Add the facet plot to the markdown file
-        f.write('\n ### Deep Work Hours by Category Over Time: \n')
-        f.write('![Facet Plot](figures/facet_plot.png) \n')
-
-        f.write('\n ### Total Deep Work Hours (by Category): \n')
-        f.write('![Bar Chart](figures/bar_chart.png) \n')
+        f.write('\n ### Daily Breakdown: \n')
+        f.write('![Facet Plot](figures/daily_breakdown.png) \n')
 
 
 file_path = 'table.csv'
