@@ -42,7 +42,7 @@ pip install pandas matplotlib seaborn
 
 2. Duplicate the `MONTH_YEAR` directory, making sure to replace MONTH and YEAR with the appropriate month and year for which you want to track your deep work hours. 
 
-3. Edit the `table.csv` file located in your `MONTH_YEAR` directory. For clarification purposes, we will use the `table.csv` file in the default `MONTH_YEAR` directory:
+3. Edit the `table.csv` file located in your duplicated `MONTH_YEAR` directory. For clarification purposes, we will use the `table.csv` file in the default `MONTH_YEAR` directory:
 
 ```
 Date,Reading,Writing,Coding,Mathematics
@@ -61,7 +61,7 @@ _Note: a date in the “Date” column should be in the format `MM-DD-YYYY`._
 python update_monthly_summary.py
 ```
 
-Three files will be generated:
+Three files will be generated in your `MONTH_YEAR` directory:
 
 - `monthly_summary.md`
 - `figures/monthly_breakdown.png`
