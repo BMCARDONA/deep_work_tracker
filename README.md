@@ -2,6 +2,8 @@
 
 Deep Work Tracker is a productivity tool designed to help you track a state of peak concentration known as deep work. By incorporating deep work into your workflow, you can learn hard things and create high-quality work efficiently. This repository provides a simple solution for tracking your daily results. 
 
+To see a personal implementation of the Deep Work Tracker, please see [this](https://github.com/BMCARDONA/deep_work_tracker_personal) repository. 
+
 ## Table of Contents
   - [Installation](#installation)
   - [Dependencies](#dependencies)
